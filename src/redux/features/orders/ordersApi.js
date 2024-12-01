@@ -6,7 +6,7 @@ const ordersApi = createApi({
     reducerPath: 'ordersApi',
     baseQuery: fetchBaseQuery({
         baseUrl: `${getBaseUrl()}/api/orders`,
-        credentials: 'include'
+        credentials: 'same-origin'
     }),
     tagTypes: ['Orders'],
     endpoints: (builder) => ({
@@ -15,7 +15,7 @@ const ordersApi = createApi({
                 url: "/",
                 method: "POST",
                 body: newOrder,
-                credentials: 'include',
+                credentials: 'same-origin',
             })
         }),
         getOrderByEmail: (builder.query) ({
