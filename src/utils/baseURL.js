@@ -1,6 +1,6 @@
 const getBaseUrl = () => {
     // return "http://localhost:3000"
-    return "http://18.212.209.47"
+    return "https://18.212.213.165"
 }
 
 export default getBaseUrl;
