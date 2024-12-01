@@ -2,7 +2,6 @@ import React from 'react'
 import { FiShoppingCart } from "react-icons/fi"
 import { useParams } from "react-router-dom"
 
-import { getImgUrl } from '../../utils/getImgUrl';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/features/cart/cartSlice';
 import { useFetchBookByIdQuery } from '../../redux/features/books/booksApi';
@@ -10,6 +9,7 @@ import { useFetchBookByIdQuery } from '../../redux/features/books/booksApi';
 const SingleBook = () => {
     const {id} = useParams();
     const {data: book, isLoading, isError} = useFetchBookByIdQuery(id);
+    console.log("book", book)   
 
     const dispatch =  useDispatch();
 
@@ -26,7 +26,7 @@ const SingleBook = () => {
             <div className=''>
                 <div>
                     <img
-                        src={`${getImgUrl(book.coverImage)}`}
+                        src={book.coverImage}
                         alt={book.title}
                         className="mb-8"
                     />
